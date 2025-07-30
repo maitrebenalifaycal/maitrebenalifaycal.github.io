@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تحضير ملف</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #d4af37;
+      font-family: 'Arial', sans-serif;
+      padding: 20px;
+      margin: 0;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background-color: #111;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #d4af37;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #d4af37;
+      border-radius: 10px;
+      background-color: #222;
+      color: #d4af37;
+      font-size: 16px;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #a98f45;
+    }
+
+    button {
+      background-color: transparent;
+      border: 2px solid #d4af37;
+      color: #d4af37;
+      padding: 12px 25px;
+      font-size: 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #d4af37;
+      color: #000;
+    }
+
+    @media (max-width: 600px) {
+      form {
+        padding: 15px;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <form action="https://formsubmit.co/TON@EMAIL.COM" method="POST" enctype="multipart/form-data">
+
+    <label for="nom">الاسم الكامل *</label>
+    <input type="text" name="الاسم الكامل" required>
+
+    <label for="pere">اسم الأب *</label>
+    <input type="text" name="اسم الأب" required>
+
+    <label for="naissance">تاريخ الميلاد *</label>
+    <input type="date" name="تاريخ الميلاد" required>
+
+    <label for="tel">رقم الهاتف *</label>
+    <input type="tel" name="رقم الهاتف" required pattern="^0[5-7][0-9]{8}$" title="رقم هاتف جزائري صحيح">
+
+    <label for="adresse">العنوان *</label>
+    <input type="text" name="العنوان" required>
+
+    <label for="contrat">نوع العقد *</label>
+    <select name="نوع العقد" required>
+      <option value="">-- اختر --</option>
+      <option value="عقد بيع">عقد بيع</option>
+      <option value="عقد كراء">عقد كراء</option>
+      <option value="عقد هبة">عقد هبة</option>
+      <option value="عقد زواج">عقد زواج</option>
+      <option value="وثيقة أخرى">وثيقة أخرى</option>
+    </select>
+
+    <label for="doc">إرفاق الوثائق (PDF أو صورة) *</label>
+    <input type="file" name="الوثائق" accept=".pdf,image/*" capture="environment" required>
+
+    <label for="notes">ملاحظات إضافية</label>
+    <textarea name="ملاحظات إضافية" rows="4" placeholder="إن وجدت..."></textarea>
+
+    <input type="hidden" name="_next" value="https://maitrebenalifaycal.github.io/success.html">
+
+    <button type="submit">إرسال</button>
+  </form>
+
+</body>
+</html>
