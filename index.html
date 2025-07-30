@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maître Benali Fayçal</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      text-align: center;
+    }
+    header {
+      padding: 40px 20px 20px;
+    }
+    header img {
+      width: 120px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    header h1 {
+      margin: 10px 0 5px;
+      font-size: 26px;
+    }
+    header p {
+      margin: 5px 0;
+      font-size: 16px;
+      color: #bbb;
+    }
+    .lang-switch {
+      margin: 20px;
+    }
+    .lang-switch button {
+      background-color: #444;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    .info-block {
+      font-size: 16px;
+      margin: 20px auto 10px;
+      max-width: 400px;
+    }
+    .info-block span {
+      display: block;
+      margin: 5px 0;
+    }
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin: 20px auto 40px;
+      max-width: 300px;
+    }
+    .buttons a {
+      display: block;
+      background-color: #1f1f1f;
+      color: white;
+      padding: 15px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+    .buttons a:hover {
+      background-color: #333;
+    }
+    footer {
+      margin-top: 50px;
+      font-size: 12px;
+      color: #888;
+      padding-bottom: 30px;
+    }
+  </style>
+  <script>
+    function switchLang() {
+      const fr = document.getElementById("fr");
+      const ar = document.getElementById("ar");
+      if (fr.style.display === "none") {
+        fr.style.display = "block";
+        ar.style.display = "none";
+      } else {
+        fr.style.display = "none";
+        ar.style.display = "block";
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo">
+    <div id="fr">
+      <h1>Maître Benali Fayçal</h1>
+      <p>Notaire à Relizane</p>
+      <div class="info-block">
+        <span>📞 <a href="tel:046723107" style="color:#bbb;">Téléphone : 046 72 31 07</a></span>
+        <span>📧 Email : maitrebenalif@gmail.com</span>
+        <span>📱 WhatsApp : +213 541 44 42 75</span>
+        <span>📍 Adresse : 19 BD de la république, Relizane 48000</span>
+      </div>
+      <div class="buttons">
+        <a href="formulaire.html">📄 Préparer un dossier</a>
+        <a href="mailto:maitrebenalif@gmail.com">✉️ Envoyer un email</a>
+        <a href="https://wa.me/213541444275">💬 Contacter sur WhatsApp</a>
+        <a href="https://maps.app.goo.gl/wX5e42whm5ndc3mx7">🗺️ Ouvrir dans Google Maps</a>
+      </div>
+    </div>
+
+    <div id="ar" style="display: none; direction: rtl;">
+      <h1>الأستاذ بن علي فيصل</h1>
+      <p>موثق بغليزان</p>
+      <div class="info-block">
+        <span>☎️ <a href="tel:046723107" style="color:#bbb;">الهاتف : <span dir="ltr" style="unicode-bidi: embed;">046 72 31 07</span></a></span>
+        <span>📧 البريد الإلكتروني : maitrebenalif@gmail.com</span>
+        <span>📱 واتساب : <span dir="ltr" style="unicode-bidi: embed;">+213 541 44 42 75</span></span>
+        <span>📍 العنوان : 19 شارع الجمهورية، غليزان 48000</span>
+      </div>
+      <div class="buttons">
+        <a href="formulaire.html">📄 حضّر ملفك</a>
+        <a href="mailto:maitrebenalif@gmail.com">✉️ ابعث إيمايل</a>
+        <a href="https://wa.me/213541444275">💬 ابعث واتساب</a>
+        <a href="https://maps.app.goo.gl/wX5e42whm5ndc3mx7">🗺️ افتح في خرائط جوجل</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="lang-switch">
+    <button onclick="switchLang()">العربية / Français</button>
+  </div>
+
+  <footer>
+    &copy; 2025 Maître Benali Fayçal - Tous droits réservés
+  </footer>
+</body>
+</html>
