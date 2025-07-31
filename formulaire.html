@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>تحضير ملف</title>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("Bic738rFqLP7ve5yu");
+    })();
+  </script>
+  <style>
+    body {
+      background-color: #000;
+      color: #d4af37;
+      font-family: 'Arial', sans-serif;
+      padding: 20px;
+      margin: 0;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background-color: #111;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #d4af37;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #d4af37;
+      border-radius: 10px;
+      background-color: #222;
+      color: #d4af37;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: transparent;
+      border: 2px solid #d4af37;
+      color: #d4af37;
+      padding: 12px 25px;
+      font-size: 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #d4af37;
+      color: #000;
+    }
+
+    #message {
+      text-align: center;
+      font-size: 18px;
+      margin-top: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="contact-form">
+    <label>الاسم الكامل *</label>
+    <input type="text" name="الاسم_الكامل" required />
+
+    <label>اسم الأب *</label>
+    <input type="text" name="اسم_الأب" required />
+
+    <label>تاريخ الميلاد *</label>
+    <input type="date" name="تاريخ_الميلاد" required />
+
+    <label>رقم الهاتف *</label>
+    <input type="tel" name="رقم_الهاتف" required pattern="^0[5-7][0-9]{8}$" title="رقم هاتف جزائري صحيح" />
+
+    <label>العنوان *</label>
+    <input type="text" name="العنوان" required />
+
+    <label>نوع العقد *</label>
+    <select name="نوع_العقد" required>
+      <option value="">-- اختر --</option>
+      <option value="عقد بيع">عقد بيع</option>
+      <option value="عقد كراء">عقد كراء</option>
+      <option value="عقد هبة">عقد هبة</option>
+      <option value="عقد زواج">عقد زواج</option>
+      <option value="وثيقة أخرى">وثيقة أخرى</option>
+    </select>
+
+    <label>ملاحظات إضافية</label>
+    <textarea name="ملاحظات_إضافية" rows="4" placeholder="إن وجدت..."></textarea>
+
+    <button type="submit">إرسال</button>
+  </form>
+
+  <div id="message">✅ تم الإرسال بنجاح. شكراً!</div>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      emailjs.sendForm('service_u9c5jm7', 'template_eey2u5b', this)
+        .then(() => {
+          form.reset();
+          message.style.display = 'block';
+        }, (error) => {
+          alert('حدث خطأ أثناء الإرسال. حاول مرة أخرى.');
+          console.log('FAILED...', error);
+        });
+    });
+  </script>
+
+</body>
+</html>
